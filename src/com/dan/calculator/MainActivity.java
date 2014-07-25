@@ -2,6 +2,7 @@ package com.dan.calculator;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +24,7 @@ public class MainActivity extends Activity implements OnClickListener {
         
         //Find the text view that displays entered numbers / result
         textResult = (TextView) findViewById(R.id.numberDisplay);
+        textResult.setText("");
         
         //Find the buttons
         btnZero = (Button) findViewById(R.id.zero);
@@ -61,7 +63,6 @@ public class MainActivity extends Activity implements OnClickListener {
         btnClear.setOnClickListener(this);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -80,11 +81,50 @@ public class MainActivity extends Activity implements OnClickListener {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
+    
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
+		switch (v.getId()) {
+		case R.id.zero:
+			Log.d("TextResult", textResult.getText().toString());
+			String emptyResultCheck = textResult.getText().toString();
+			if(emptyResultCheck != null && !emptyResultCheck.isEmpty()) {
+				textResult.append("0");
+				break;
+			}
+			else {
+				break;
+			}
+		case R.id.one:
+			textResult.append("1");
+			break;
+		case R.id.two:
+			textResult.append("2");
+			break;
+		case R.id.three:
+			textResult.append("3");
+			break;
+		case R.id.four:
+			textResult.append("4");
+			break;
+		case R.id.five:
+			textResult.append("5");
+			break;
+		case R.id.six:
+			textResult.append("6");
+			break;
+		case R.id.seven:
+			textResult.append("7");
+			break;
+		case R.id.eight:
+			textResult.append("8");
+			break;
+		case R.id.nine:
+			textResult.append("9");
+			break;
+		case R.id.clear:
+			textResult.setText("");
+			break;
+		}
 	}
 }
