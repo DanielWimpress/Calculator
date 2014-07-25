@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener {
 	
 	TextView textResult;
 	
@@ -39,6 +41,24 @@ public class MainActivity extends Activity {
         btnMultiply = (Button) findViewById(R.id.multiply);
         btnEqual = (Button) findViewById(R.id.equal);
         btnClear = (Button) findViewById(R.id.clear);
+        
+        //Set click listeners to the buttons
+        btnZero.setOnClickListener(this);
+        btnOne.setOnClickListener(this);
+        btnTwo.setOnClickListener(this);
+        btnThree.setOnClickListener(this);
+        btnFour.setOnClickListener(this);
+        btnFive.setOnClickListener(this);
+        btnSix.setOnClickListener(this);
+        btnSeven.setOnClickListener(this);
+        btnEight.setOnClickListener(this);
+        btnNine.setOnClickListener(this);
+        
+        btnAdd.setOnClickListener(this);
+        btnSubtract.setOnClickListener(this);
+        btnMultiply.setOnClickListener(this);
+        btnEqual.setOnClickListener(this);
+        btnClear.setOnClickListener(this);
     }
 
 
@@ -60,4 +80,11 @@ public class MainActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
 }
