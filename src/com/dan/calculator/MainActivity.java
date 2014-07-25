@@ -86,9 +86,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.zero:
-			Log.d("TextResult", textResult.getText().toString());
-			String emptyResultCheck = textResult.getText().toString();
-			if(emptyResultCheck != null && !emptyResultCheck.isEmpty()) {
+			String leadingZeroCheck = textResult.getText().toString();
+			if(leadingZeroCheck != null && !leadingZeroCheck.isEmpty()) {
 				textResult.append("0");
 				break;
 			}
@@ -121,6 +120,14 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.nine:
 			textResult.append("9");
+			break;
+		case R.id.add:
+			break;
+		case R.id.subtract:
+			break;
+		case R.id.multiply:
+			break;
+		case R.id.divide:
 			break;
 		case R.id.clear:
 			textResult.setText("");
