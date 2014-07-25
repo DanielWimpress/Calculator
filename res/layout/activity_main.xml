@@ -10,7 +10,7 @@
     tools:context=".Home"
     android:background="#000000" >
 
-    <EditText
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
