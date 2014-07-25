@@ -16,6 +16,10 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	Button btnZero, btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine,
 	btnAdd, btnSubtract, btnMultiply, btnEqual, btnClear;
+	
+	String operator = "";
+	int firstNumber;
+	int secondNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,12 +86,21 @@ public class MainActivity extends Activity implements OnClickListener {
         return super.onOptionsItemSelected(item);
     }
     
+    public void checkForLeadingZero(String leading) {
+    	//Need to fill this in when adding decimal points to the calculator
+    	//e.g. User needs to be able to enter 0.5 which it does not currently allow
+    }
+    
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.zero:
-			String leadingZeroCheck = textResult.getText().toString();
-			if(leadingZeroCheck != null && !leadingZeroCheck.isEmpty()) {
+			if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
+			String currentDisplayedNumber = textResult.getText().toString();
+			if(currentDisplayedNumber != null && !currentDisplayedNumber.isEmpty()) {
 				textResult.append("0");
 				break;
 			}
@@ -95,33 +108,84 @@ public class MainActivity extends Activity implements OnClickListener {
 				break;
 			}
 		case R.id.one:
+			if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
 			textResult.append("1");
 			break;
 		case R.id.two:
+			if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
 			textResult.append("2");
 			break;
 		case R.id.three:
+			if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
 			textResult.append("3");
 			break;
 		case R.id.four:
+			if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
 			textResult.append("4");
 			break;
 		case R.id.five:
+			if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
 			textResult.append("5");
 			break;
 		case R.id.six:
+			if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
 			textResult.append("6");
 			break;
 		case R.id.seven:
+			if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
 			textResult.append("7");
 			break;
 		case R.id.eight:
+			if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
 			textResult.append("8");
 			break;
 		case R.id.nine:
+			if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
 			textResult.append("9");
 			break;
 		case R.id.add:
+			operator = "+";
+			if(firstNumber == 0) {
+				firstNumber = Integer.parseInt(textResult.getText().toString());
+				textResult.setText("");
+			}
+			else if(secondNumber != 0) {
+				secondNumber = 0;
+				textResult.setText("");
+			}
+			else {
+				secondNumber = Integer.parseInt(textResult.getText().toString());
+				textResult.setText("");
+				firstNumber = firstNumber + secondNumber;
+				textResult.setText(Integer.toString(firstNumber));
+			}
 			break;
 		case R.id.subtract:
 			break;
@@ -131,6 +195,8 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.clear:
 			textResult.setText("");
+			firstNumber = 0;
+			secondNumber = 0;
 			break;
 		}
 	}
