@@ -14,8 +14,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
-        android:text="@string/display"
-        android:id = "@+id/display"/>
+        android:text="@string/numberDisplay"
+        android:id = "@+id/numberDisplay"/>
     
    <LinearLayout android:orientation="horizontal"
        android:layout_width="fill_parent"

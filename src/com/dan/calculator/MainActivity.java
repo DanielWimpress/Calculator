@@ -4,14 +4,41 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
+	
+	TextView textResult;
+	
+	Button btnZero, btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine,
+	btnAdd, btnSubtract, btnMultiply, btnEqual, btnClear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        //Find the text view that displays entered numbers / result
+        textResult = (TextView) findViewById(R.id.numberDisplay);
+        
+        //Find the buttons
+        btnZero = (Button) findViewById(R.id.zero);
+        btnOne = (Button) findViewById(R.id.one);
+        btnTwo = (Button) findViewById(R.id.two);
+        btnThree = (Button) findViewById(R.id.three);
+        btnFour = (Button) findViewById(R.id.four);
+        btnFive = (Button) findViewById(R.id.five);
+        btnSix = (Button) findViewById(R.id.six);
+        btnSeven = (Button) findViewById(R.id.seven);
+        btnEight = (Button) findViewById(R.id.eight);
+        btnNine = (Button) findViewById(R.id.nine);
+        
+        btnAdd = (Button) findViewById(R.id.add);
+        btnSubtract = (Button) findViewById(R.id.subtract);
+        btnMultiply = (Button) findViewById(R.id.multiply);
+        btnEqual = (Button) findViewById(R.id.equal);
+        btnClear = (Button) findViewById(R.id.clear);
     }
 
 
